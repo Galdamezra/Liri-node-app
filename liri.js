@@ -43,16 +43,15 @@ function movieSearch() {
     var searchMovie;
 
     if(searchMovie === undefined){
-        searchMovie = "Mr. Nobody";
+        searchMovie = "Crash";
     } else {
-        searchMovie = userDefine;
+        searchMovie === userDefine;
     }
 
     var query = 'http://www.omdbapi.com/?t=' + searchMovie +'&apiKey=40e9cece&y=&plot=long&tomatoes=true&r=json';
 
     request(query, function(err, response, body){
         if(!err && response.statusCode == 200){
-            console.log('========================================');
             console.log("Title: " + JSON.parse(body).Title);
             console.log("Year: " + JSON.parse(body).Year);
             console.log("IMDb Rating: " + JSON.parse(body).imdbRating);
@@ -62,7 +61,6 @@ function movieSearch() {
             console.log("Actors: " + JSON.parse(body).Actors);
             console.log("Rotten Tomatoes Rating: " + JSON.parse(body).tomatoRating);
             console.log("Rotten Tomatoes URL: " + JSON.parse(body).tomatoURL);
-            console.log('=========================================');
         }
     });
     // //loop through all words
